@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BussinessLayer
 {
-    internal class LoginBussiness
+    public class LoginBussiness
     {
     }
 }
