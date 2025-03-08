@@ -20,7 +20,7 @@ namespace PresentatioLayer
 
             if (resultado == "Bienvenido")
             {
-                Response.Redirect("Dashboard.aspx");
+                Response.Redirect("../DashBoard/Dashboard.aspx");
             }
             else
             {

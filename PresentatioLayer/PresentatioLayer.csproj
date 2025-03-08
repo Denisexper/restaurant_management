@@ -67,27 +67,27 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Dashboard.aspx" />
+    <Content Include="DashBoard\Dashboard.aspx" />
     <Content Include="Global.asax" />
-    <Content Include="Login.aspx" />
+    <Content Include="Login\Login.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Dashboard.aspx.cs">
+    <Compile Include="DashBoard\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Dashboard.aspx.designer.cs">
+    <Compile Include="DashBoard\Dashboard.aspx.designer.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Login.aspx.cs">
+    <Compile Include="Login\Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Login.aspx.designer.cs">
+    <Compile Include="Login\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />

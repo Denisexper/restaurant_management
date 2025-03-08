@@ -17,10 +17,10 @@ namespace DataLayer
             using (SqlConnection con = new SqlConnection(conexionString))
             {
                 con.Open();
-                using (SqlCommand cmd = new SqlCommand("SELECT * FROM users WHERE username = @username AND userpassword = @userpassword", con))
+                using (SqlCommand cmd = new SqlCommand("SELECT * FROM users WHERE userName = @userName AND userPassword = @userPassword", con))
                 {
-                    cmd.Parameters.AddWithValue("@username", username);
-                    cmd.Parameters.AddWithValue("@userpassword", userpassword);
+                    cmd.Parameters.AddWithValue("@userName", username);
+                    cmd.Parameters.AddWithValue("@userPassword", userpassword);
 
                     object result = cmd.ExecuteScalar();
                     int count = (result != null) ? Convert.ToInt32(result) : 0;

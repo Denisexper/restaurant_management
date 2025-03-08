@@ -7,3 +7,12 @@ C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\obj\Debug\Bussi
 C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\obj\Debug\Bussines.E1038C4E.Up2Date
 C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\obj\Debug\BussinessLayer.dll
 C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\obj\Debug\BussinessLayer.pdb
+C:\Users\andre\Source\Repos\restaurant_management\BussinessLayer\bin\Debug\BussinessLayer.dll
+C:\Users\andre\Source\Repos\restaurant_management\BussinessLayer\bin\Debug\BussinessLayer.pdb
+C:\Users\andre\Source\Repos\restaurant_management\BussinessLayer\bin\Debug\DataLayer.dll
+C:\Users\andre\Source\Repos\restaurant_management\BussinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\andre\Source\Repos\restaurant_management\BussinessLayer\obj\Debug\BussinessLayer.csproj.AssemblyReference.cache
+C:\Users\andre\Source\Repos\restaurant_management\BussinessLayer\obj\Debug\BussinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\andre\Source\Repos\restaurant_management\BussinessLayer\obj\Debug\Bussines.E1038C4E.Up2Date
+C:\Users\andre\Source\Repos\restaurant_management\BussinessLayer\obj\Debug\BussinessLayer.dll
+C:\Users\andre\Source\Repos\restaurant_management\BussinessLayer\obj\Debug\BussinessLayer.pdb
