@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BussinessLayer;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -9,9 +10,22 @@ namespace PresentatioLayer
 {
     public partial class Login : System.Web.UI.Page
     {
-        protected void Page_Load(object sender, EventArgs e)
+        LoginBussiness loginBussiness = new LoginBussiness();
+        protected void btnIniciar_Click(object sender, EventArgs e)
         {
+            string username = txtUsuario.Text;
+            string userpassword = txtPassword.Text;
 
+            string resultado = loginBussiness.IniciarSesion(username, userpassword);
+
+            if (resultado == "Bienvenido")
+            {
+                Response.Redirect("Dashboard.aspx");
+            }
+            else
+            {
+                lblAviso.Text = resultado;
+            }
         }
     }
 }

@@ -1,0 +1,9 @@
+C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\bin\Debug\BussinessLayer.dll
+C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\bin\Debug\BussinessLayer.pdb
+C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\bin\Debug\DataLayer.dll
+C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\bin\Debug\DataLayer.pdb
+C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\obj\Debug\BussinessLayer.csproj.AssemblyReference.cache
+C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\obj\Debug\BussinessLayer.csproj.CoreCompileInputs.cache
+C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\obj\Debug\Bussines.E1038C4E.Up2Date
+C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\obj\Debug\BussinessLayer.dll
+C:\Users\vasqu\source\repos\restaurant_management\BussinessLayer\obj\Debug\BussinessLayer.pdb
