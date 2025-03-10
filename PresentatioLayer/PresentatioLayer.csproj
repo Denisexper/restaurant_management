@@ -68,10 +68,16 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Categorias\Categorias.aspx" />
+    <Content Include="Cobro\Cobro.aspx" />
+    <Content Include="Cocina\Cocina.aspx" />
+    <Content Include="Configuracion\Configuracion.aspx" />
     <Content Include="DashBoard\Dashboard.aspx" />
     <Content Include="Global.asax" />
     <Content Include="Home\Home.aspx" />
     <Content Include="Login\Login.aspx" />
+    <Content Include="Mesas\Mesas.aspx" />
+    <Content Include="Personal\Personal.aspx" />
+    <Content Include="Productos\Productos.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -81,6 +87,27 @@
     </Compile>
     <Compile Include="Categorias\Categorias.aspx.designer.cs">
       <DependentUpon>Categorias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cobro\Cobro.aspx.cs">
+      <DependentUpon>Cobro.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cobro\Cobro.aspx.designer.cs">
+      <DependentUpon>Cobro.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Cocina\Cocina.aspx.cs">
+      <DependentUpon>Cocina.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Cocina\Cocina.aspx.designer.cs">
+      <DependentUpon>Cocina.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Configuracion\Configuracion.aspx.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Configuracion\Configuracion.aspx.designer.cs">
+      <DependentUpon>Configuracion.aspx</DependentUpon>
     </Compile>
     <Compile Include="DashBoard\Dashboard.aspx.cs">
       <DependentUpon>Dashboard.aspx</DependentUpon>
@@ -105,6 +132,27 @@
     </Compile>
     <Compile Include="Login\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mesas\Mesas.aspx.cs">
+      <DependentUpon>Mesas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mesas\Mesas.aspx.designer.cs">
+      <DependentUpon>Mesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\Personal.aspx.cs">
+      <DependentUpon>Personal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal\Personal.aspx.designer.cs">
+      <DependentUpon>Personal.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Productos\Productos.aspx.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Productos\Productos.aspx.designer.cs">
+      <DependentUpon>Productos.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

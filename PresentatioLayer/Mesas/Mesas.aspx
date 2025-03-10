@@ -1,4 +1,4 @@
-﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="PresentatioLayer.Home.Home" %>
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Mesas.aspx.cs" Inherits="PresentatioLayer.Mesas.Mesas" %>
 
 <!DOCTYPE html>
 
@@ -42,20 +42,21 @@
 </head>
 <body>
     <form id="form1" runat="server">
-        <div class="sidebar">
-            <h4 class="text-center text-light">Restaurant Management</h4>
-            <a href="../Home/Home.aspx">🏠 Principal</a>
-            <a href="../Categorias/Categorias.aspx">📂 Categorias</a>
-            <a href="../Productos/Productos.aspx">📦 Productos</a>
-            <a href="../Mesas/Mesas.aspx">🍽️ Mesas</a>
-            <a href="../Personal/Personal.aspx">👥 Personal</a>
-            <a href="../Cobro/Cobro.aspx">💳 Cobro</a>
-            <a href="../Cocina/Cocina.aspx">👨‍🍳 Cocina</a>
-            <a href="../Configuracion/Configuracion.aspx">⚙️ Configuracion</a>
-        </div>
-        <div class="content">
-            <h2>PRINCIPAL</h2>
-            
+        <div>
+            <div class="sidebar">
+                <h4 class="text-center text-light">Restaurant Management</h4>
+                <a href="../Home/Home.aspx">🏠 Principal</a>
+                <a href="../Categorias/Categorias.aspx">📂 Categorias</a>
+                <a href="../Productos/Productos.aspx">📦 Productos</a>
+                <a href="../Mesas/Mesas.aspx">🍽️ Mesas</a>
+                <a href="../Personal/Personal.aspx">👥 Personal</a>
+                <a href="../Cobro/Cobro.aspx">💳 Cobro</a>
+                <a href="../Cocina/Cocina.aspx">👨‍🍳 Cocina</a>
+                <a href="../Configuracion/Configuracion.aspx">⚙️ Configuracion</a>
+            </div>
+            <div class="content">
+                <h2>MESAS</h2>
+            </div>
         </div>
     </form>
 </body>
