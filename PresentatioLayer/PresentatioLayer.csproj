@@ -76,6 +76,7 @@
     <Content Include="Global.asax" />
     <Content Include="Home\Home.aspx" />
     <Content Include="Login\Login.aspx" />
+    <Content Include="Mesas\CrearMesa.aspx" />
     <Content Include="Mesas\Mesas.aspx" />
     <Content Include="Personal\Personal.aspx" />
     <Content Include="Productos\Productos.aspx" />
@@ -140,6 +141,13 @@
     </Compile>
     <Compile Include="Login\Login.aspx.designer.cs">
       <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Mesas\CrearMesa.aspx.cs">
+      <DependentUpon>CrearMesa.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Mesas\CrearMesa.aspx.designer.cs">
+      <DependentUpon>CrearMesa.aspx</DependentUpon>
     </Compile>
     <Compile Include="Mesas\Mesas.aspx.cs">
       <DependentUpon>Mesas.aspx</DependentUpon>
