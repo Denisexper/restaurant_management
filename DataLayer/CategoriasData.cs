@@ -57,7 +57,6 @@ namespace DataLayer
                 using (SqlCommand command = new SqlCommand("INSERT INTO Categories (nameCategorie) VALUES (@nombre)", connection))
                 {
                     command.Parameters.AddWithValue("@nombre", nombre);
-                    command.ExecuteNonQuery();
 
                     int filasAfectadas = command.ExecuteNonQuery();
                     return filasAfectadas > 0;
