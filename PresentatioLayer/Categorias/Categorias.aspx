@@ -109,7 +109,7 @@
             }
 
             .grid th {
-                background-color: #3498db;
+                background-color: #2c3e50;
                 color: white;
                 font-weight: bold;
             }
@@ -127,6 +127,16 @@
                 .grid a:hover {
                     text-decoration: underline;
                 }
+
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+            .action-buttons a {
+                margin-left: 10px;
+                font-size: 18px;
+            }
     </style>
 </head>
 <body>
@@ -183,12 +193,16 @@
 
                             <asp:TemplateField HeaderText="Acción">
                                 <ItemTemplate>
-                                    <asp:LinkButton ID="LnkEdit" runat="server" Text="Actualizar" CommandName="Edit" />
-                                    <asp:LinkButton ID="LnkDelete" runat="server" Text="Eliminar" CommandName="Delete" />
+                                    <div class="action-buttons">
+                                        <asp:LinkButton ID="LnkEdit" runat="server" CommandName="Edit" Text="🔄" CssClass="btn btn-link" />
+                                        <asp:LinkButton ID="LnkDelete" runat="server" CommandName="Delete" Text="🗑️" CssClass="btn btn-link" />
+                                    </div>
                                 </ItemTemplate>
                                 <EditItemTemplate>
-                                    <asp:LinkButton ID="LnkUpdate" runat="server" Text="Actualizar" CommandName="Update" />
-                                    <asp:LinkButton ID="LnkCancel" runat="server" Text="Cancelar" CommandName="Cancel" />
+                                    <div class="action-buttons">
+                                        <asp:LinkButton ID="LnkUpdate" runat="server" CommandName="Update" Text="🔄" CssClass="btn btn-link" />
+                                        <asp:LinkButton ID="LnkCancel" runat="server" CommandName="Cancel" Text="❌" CssClass="btn btn-link" />
+                                    </div>
                                 </EditItemTemplate>
                             </asp:TemplateField>
                         </Columns>
