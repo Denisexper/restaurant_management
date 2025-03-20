@@ -20,18 +20,18 @@
             padding-top: 20px;
         }
 
-        .sidebar a {
-            padding: 15px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #ecf0f1;
-            display: block;
-            transition: 0.3s;
-        }
+            .sidebar a {
+                padding: 15px;
+                text-decoration: none;
+                font-size: 18px;
+                color: #ecf0f1;
+                display: block;
+                transition: 0.3s;
+            }
 
-        .sidebar a:hover {
-            background-color: #34495e;
-        }
+                .sidebar a:hover {
+                    background-color: #34495e;
+                }
 
         .content {
             margin-left: 260px;
@@ -45,10 +45,10 @@
             margin-bottom: 20px;
         }
 
-        .title-section h3 {
-            font-size: 24px;
-            margin: 0;
-        }
+            .title-section h3 {
+                font-size: 24px;
+                margin: 0;
+            }
 
         .add-button {
             background-color: #e74c3c;
@@ -64,9 +64,9 @@
             cursor: pointer;
         }
 
-        .add-button:hover {
-            background-color: #c0392b;
-        }
+            .add-button:hover {
+                background-color: #c0392b;
+            }
 
         .search-container {
             display: flex;
@@ -74,20 +74,20 @@
             margin-bottom: 20px;
         }
 
-        .search-container input {
-            border-radius: 5px;
-            padding: 10px;
-            border: 1px solid #ced4da;
-            margin-left: 10px;
-            width: 100%;
-            max-width: 500px;
-            font-size: 16px;
-        }
+            .search-container input {
+                border-radius: 5px;
+                padding: 10px;
+                border: 1px solid #ced4da;
+                margin-left: 10px;
+                width: 100%;
+                max-width: 500px;
+                font-size: 16px;
+            }
 
-        .search-container i {
-            color: #bdc3c7;
-            font-size: 20px;
-        }
+            .search-container i {
+                color: #bdc3c7;
+                font-size: 20px;
+            }
 
         .grid-container {
             width: 100%;
@@ -101,32 +101,32 @@
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
 
-        .grid th, .grid td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-            font-size: 16px;
-        }
+            .grid th, .grid td {
+                padding: 15px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+                font-size: 16px;
+            }
 
-        .grid th {
-            background-color: #3498db;
-            color: white;
-            font-weight: bold;
-        }
+            .grid th {
+                background-color: #3498db;
+                color: white;
+                font-weight: bold;
+            }
 
-        .grid tr:hover {
-            background-color: #f1f1f1;
-        }
+            .grid tr:hover {
+                background-color: #f1f1f1;
+            }
 
-        .grid a {
-            color: #3498db;
-            text-decoration: none;
-            margin-right: 10px;
-        }
+            .grid a {
+                color: #3498db;
+                text-decoration: none;
+                margin-right: 10px;
+            }
 
-        .grid a:hover {
-            text-decoration: underline;
-        }
+                .grid a:hover {
+                    text-decoration: underline;
+                }
     </style>
 </head>
 <body>
@@ -158,22 +158,42 @@
                 </div>
 
                 <div class="grid-container">
-                    <asp:GridView ID="GvCategorias" 
-                        runat="server" 
+                    <asp:GridView ID="GvCategorias"
+                        runat="server"
                         AutoGenerateColumns="False"
                         DataKeyNames="idCategorie"
-                        CssClass="grid">
+                        CssClass="grid"
+                        OnRowCancelingEdit="GvCategorias_RowCancelingEdit"
+                        OnRowDeleting="GvCategorias_RowDeleting"
+                        OnRowEditing="GvCategorias_RowEditing"
+                        OnRowUpdating="GvCategorias_RowUpdating">
                         <Columns>
-                            <asp:BoundField DataField="idCategorie" HeaderText="ID" />
-                            <asp:BoundField DataField="nameCategorie" HeaderText="Nombre" />
+                            <asp:BoundField DataField="idCategorie" HeaderText="ID" SortExpression="idCategorie" />
+
+                            
+                            <asp:TemplateField HeaderText="Nombre" SortExpression="nameCategorie">
+                                <ItemTemplate>
+                                    <%# Eval("nameCategorie") %>
+                                    
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TxtName" runat="server" Text='<%# Bind("nameCategorie") %>' />
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+
                             <asp:TemplateField HeaderText="Acción">
                                 <ItemTemplate>
                                     <asp:LinkButton ID="LnkEdit" runat="server" Text="Actualizar" CommandName="Edit" />
                                     <asp:LinkButton ID="LnkDelete" runat="server" Text="Eliminar" CommandName="Delete" />
                                 </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:LinkButton ID="LnkUpdate" runat="server" Text="Actualizar" CommandName="Update" />
+                                    <asp:LinkButton ID="LnkCancel" runat="server" Text="Cancelar" CommandName="Cancel" />
+                                </EditItemTemplate>
                             </asp:TemplateField>
                         </Columns>
                     </asp:GridView>
+
                 </div>
             </div>
         </div>

@@ -71,7 +71,7 @@ namespace DataLayer
             using (SqlConnection connection = new SqlConnection(conexionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("UPDATE Categories SET nameCategorie = @nombre WHERE CategoryID = @id", connection))
+                using (SqlCommand command = new SqlCommand("UPDATE Categories SET nameCategorie = @nombre WHERE idCategorie = @id", connection))
                 {
                     command.Parameters.AddWithValue("@nombre", nombre);
                     command.Parameters.AddWithValue("@id", id);
@@ -88,7 +88,7 @@ namespace DataLayer
             using (SqlConnection connection = new SqlConnection(conexionString))
             {
                 connection.Open();
-                using (SqlCommand command = new SqlCommand("DELETE FROM Categories WHERE CategoryID = @id", connection))
+                using (SqlCommand command = new SqlCommand("DELETE FROM Categories WHERE idCategorie = @id", connection))
                 {
                     command.Parameters.AddWithValue("@id", id);
 
