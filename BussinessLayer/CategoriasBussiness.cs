@@ -16,5 +16,22 @@ namespace BussinessLayer
         {
             return CategoriasD.obtenerCategorias();
         }
+
+        public bool insertarCategoria(string nombre)
+        {
+            return CategoriasD.insertarCategoria(nombre);
+        }
+
+        public bool actualizarCategoria(int id, string nombre)
+        {
+            return CategoriasD.actualizarCategoria(id, nombre);
+        }
+
+        public bool eliminarCategoria(int id)
+        {
+            return CategoriasD.eliminarCategoria(id);
+        }
     }
+
+    
 }

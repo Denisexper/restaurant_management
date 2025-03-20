@@ -8,17 +8,17 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title></title>
     <style>
-    body {
-        background-color: #f8f9fa;
-    }
+        body {
+            background-color: #f8f9fa;
+        }
 
-    .sidebar {
-        height: 100vh;
-        width: 250px;
-        position: fixed;
-        background-color: #2c3e50;
-        padding-top: 20px;
-    }
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            background-color: #2c3e50;
+            padding-top: 20px;
+        }
 
         .sidebar a {
             padding: 15px;
@@ -29,19 +29,110 @@
             transition: 0.3s;
         }
 
-            .sidebar a:hover {
-                background-color: #34495e;
-            }
+        .sidebar a:hover {
+            background-color: #34495e;
+        }
 
-    .content {
-        margin-left: 260px;
-        padding: 20px;
-    }
-</style>
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+
+        .title-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+        .title-section h3 {
+            font-size: 24px;
+            margin: 0;
+        }
+
+        .add-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .add-button:hover {
+            background-color: #c0392b;
+        }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .search-container input {
+            border-radius: 5px;
+            padding: 10px;
+            border: 1px solid #ced4da;
+            margin-left: 10px;
+            width: 100%;
+            max-width: 500px;
+            font-size: 16px;
+        }
+
+        .search-container i {
+            color: #bdc3c7;
+            font-size: 20px;
+        }
+
+        .grid-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .grid {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .grid th, .grid td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        .grid th {
+            background-color: #3498db;
+            color: white;
+            font-weight: bold;
+        }
+
+        .grid tr:hover {
+            background-color: #f1f1f1;
+        }
+
+        .grid a {
+            color: #3498db;
+            text-decoration: none;
+            margin-right: 10px;
+        }
+
+        .grid a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <!-- Menú de navegación (idéntico al de Configuracion.aspx) -->
             <div class="sidebar">
                 <h4 class="text-center text-light">Restaurant Management</h4>
                 <a href="../Home/Home.aspx">🏠 Principal</a>
@@ -53,9 +144,37 @@
                 <a href="../Cocina/Cocina.aspx">👨‍🍳 Cocina</a>
                 <a href="../Configuracion/Configuracion.aspx">⚙️ Configuracion</a>
             </div>
-            <div class="content">
-                <h2>CATEGORIAS</h2>
 
+            <!-- Contenido principal -->
+            <div class="content">
+                <div class="title-section">
+                    <h2>Lista de Categorias</h2>
+                    <button type="button" class="add-button" onclick="window.location.href='CrearCategoria.aspx'">+</button>
+                </div>
+
+                <div class="search-container">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Buscar Categoria" />
+                </div>
+
+                <div class="grid-container">
+                    <asp:GridView ID="GvCategorias" 
+                        runat="server" 
+                        AutoGenerateColumns="False"
+                        DataKeyNames="idCategorie"
+                        CssClass="grid">
+                        <Columns>
+                            <asp:BoundField DataField="idCategorie" HeaderText="ID" />
+                            <asp:BoundField DataField="nameCategorie" HeaderText="Nombre" />
+                            <asp:TemplateField HeaderText="Acción">
+                                <ItemTemplate>
+                                    <asp:LinkButton ID="LnkEdit" runat="server" Text="Actualizar" CommandName="Edit" />
+                                    <asp:LinkButton ID="LnkDelete" runat="server" Text="Eliminar" CommandName="Delete" />
+                                </ItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </div>
             </div>
         </div>
     </form>

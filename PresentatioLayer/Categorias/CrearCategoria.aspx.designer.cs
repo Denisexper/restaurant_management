@@ -11,7 +11,7 @@ namespace PresentatioLayer.Categorias
 {
 
 
-    public partial class Categorias
+    public partial class CrearCategoria
     {
 
         /// <summary>
@@ -22,14 +22,5 @@ namespace PresentatioLayer.Categorias
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlForm form1;
-
-        /// <summary>
-        /// Control GvCategorias.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GvCategorias;
     }
 }
