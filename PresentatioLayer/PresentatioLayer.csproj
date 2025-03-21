@@ -78,6 +78,7 @@
     <Content Include="Login\Login.aspx" />
     <Content Include="Mesas\CrearMesa.aspx" />
     <Content Include="Mesas\Mesas.aspx" />
+    <Content Include="Personal\CrearPersonal.aspx" />
     <Content Include="Personal\Personal.aspx" />
     <Content Include="Productos\Productos.aspx" />
     <Content Include="Web.config" />
@@ -155,6 +156,13 @@
     </Compile>
     <Compile Include="Mesas\Mesas.aspx.designer.cs">
       <DependentUpon>Mesas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Personal\CrearPersonal.aspx.cs">
+      <DependentUpon>CrearPersonal.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Personal\CrearPersonal.aspx.designer.cs">
+      <DependentUpon>CrearPersonal.aspx</DependentUpon>
     </Compile>
     <Compile Include="Personal\Personal.aspx.cs">
       <DependentUpon>Personal.aspx</DependentUpon>

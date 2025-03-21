@@ -6,43 +6,144 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-
     <title></title>
     <style>
-    body {
-        background-color: #f8f9fa;
-    }
-
-    .sidebar {
-        height: 100vh;
-        width: 250px;
-        position: fixed;
-        background-color: #2c3e50;
-        padding-top: 20px;
-    }
-
-        .sidebar a {
-            padding: 15px;
-            text-decoration: none;
-            font-size: 18px;
-            color: #ecf0f1;
-            display: block;
-            transition: 0.3s;
+        body {
+            background-color: #f8f9fa;
         }
 
-            .sidebar a:hover {
-                background-color: #34495e;
+        .sidebar {
+            height: 100vh;
+            width: 250px;
+            position: fixed;
+            background-color: #2c3e50;
+            padding-top: 20px;
+        }
+
+            .sidebar a {
+                padding: 15px;
+                text-decoration: none;
+                font-size: 18px;
+                color: #ecf0f1;
+                display: block;
+                transition: 0.3s;
             }
 
-    .content {
-        margin-left: 260px;
-        padding: 20px;
-    }
-</style>
+                .sidebar a:hover {
+                    background-color: #34495e;
+                }
+
+        .content {
+            margin-left: 260px;
+            padding: 20px;
+        }
+
+        .title-section {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 20px;
+        }
+
+            .title-section h3 {
+                font-size: 24px;
+                margin: 0;
+            }
+
+        .add-button {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 24px;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+            .add-button:hover {
+                background-color: #c0392b;
+            }
+
+        .search-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+            .search-container input {
+                border-radius: 5px;
+                padding: 10px;
+                border: 1px solid #ced4da;
+                margin-left: 10px;
+                width: 100%;
+                max-width: 500px;
+                font-size: 16px;
+            }
+
+            .search-container i {
+                color: #bdc3c7;
+                font-size: 20px;
+            }
+
+        .grid-container {
+            width: 100%;
+            overflow-x: auto;
+        }
+
+        .grid {
+            width: 100%;
+            border-collapse: collapse;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+            .grid th, .grid td {
+                padding: 8px;
+                text-align: left;
+                border-bottom: 1px solid #ddd;
+                font-size: 16px;
+            }
+
+            .grid th {
+                background-color: #2c3e50;
+                color: white;
+                font-weight: bold;
+            }
+
+            .grid tr:hover {
+                background-color: #f1f1f1;
+            }
+
+            .grid a {
+                color: #3498db;
+                text-decoration: none;
+                margin-right: 10px;
+            }
+
+                .grid a:hover {
+                    text-decoration: underline;
+                }
+
+        .action-buttons {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+            .action-buttons a {
+                margin-left: 10px;
+                font-size: 18px;
+                text-decoration: none;
+            }
+    </style>
 </head>
 <body>
     <form id="form1" runat="server">
         <div>
+            <!-- Menú de navegación -->
             <div class="sidebar">
                 <h4 class="text-center text-light">Restaurant Management</h4>
                 <a href="../Home/Home.aspx">🏠 Principal</a>
@@ -54,8 +155,68 @@
                 <a href="../Cocina/Cocina.aspx">👨‍🍳 Cocina</a>
                 <a href="../Configuracion/Configuracion.aspx">⚙️ Configuracion</a>
             </div>
+
+            <!-- Contenido principal -->
             <div class="content">
-                <h2>PERSONAL</h2>
+                <div class="title-section">
+                    <h2>Lista de Personal</h2>
+                    <button type="button" class="add-button" onclick="window.location.href='CrearPersonal.aspx'">+</button>
+                </div>
+
+                <div class="search-container">
+                    <i class="bi bi-search"></i>
+                    <input type="text" placeholder="Buscar Personal" />
+                </div>
+
+                <div class="grid-container">
+                    <asp:GridView ID="GvPersonal"
+                        runat="server"
+                        AutoGenerateColumns="False"
+                        DataKeyNames="staffId"
+                        CssClass="grid" OnRowEditing="GvPersonal_RowEditing" OnRowUpdating="GvPersonal_RowUpdating" OnRowCancelingEdit="GvPersonal_RowCancelingEdit" OnRowDeleting="GvPersonal_RowDeleting">
+                        <Columns>
+                            <asp:BoundField DataField="staffId" HeaderText="ID" SortExpression="staffId" />
+                            <asp:TemplateField HeaderText="Nombre" SortExpression="namePersonal">
+                                <ItemTemplate>
+                                    <%# Eval("sName") %>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TxtName" runat="server" Text='<%# Bind("sName") %>' />
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Telefono" SortExpression="telefono">
+                                <ItemTemplate>
+                                    <%# Eval("sPhone") %>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TxtPhone" runat="server" Text='<%# Bind("sPhone") %>' />
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Rol" SortExpression="role">
+                                <ItemTemplate>
+                                    <%# Eval("sRole") %>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <asp:TextBox ID="TxtRole" runat="server" Text='<%# Bind("sRole") %>' />
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+                            <asp:TemplateField HeaderText="Acción">
+                                <ItemTemplate>
+                                    <div class="action-buttons">
+                                        <asp:LinkButton ID="LnkEdit" runat="server" CommandName="Edit" Text="🔄" CssClass="btn btn-link" />
+                                        <asp:LinkButton ID="LnkDelete" runat="server" CommandName="Delete" Text="🗑️" CssClass="btn btn-link" />
+                                    </div>
+                                </ItemTemplate>
+                                <EditItemTemplate>
+                                    <div class="action-buttons">
+                                        <asp:LinkButton ID="LnkUpdate" runat="server" CommandName="Update" Text="🔄" CssClass="btn btn-link" />
+                                        <asp:LinkButton ID="LnkCancel" runat="server" CommandName="Cancel" Text="❌" CssClass="btn btn-link" />
+                                    </div>
+                                </EditItemTemplate>
+                            </asp:TemplateField>
+                        </Columns>
+                    </asp:GridView>
+                </div>
             </div>
         </div>
     </form>
